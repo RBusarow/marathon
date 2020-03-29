@@ -42,6 +42,7 @@ open class MarathonRunTask : DefaultTask(), VerificationTask {
 
     @TaskAction
     fun runMarathon() {
+
         val instrumentationApk = testVariant.extractTestApplication()
         val applicationApk = applicationVariant.extractApplication()
 

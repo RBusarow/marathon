@@ -40,3 +40,13 @@ allprojects {
         google()
     }
 }
+
+allprojects {
+    configurations.all {
+        resolutionStrategy.eachDependency {
+            if (requested.group == "org.jetbrains.kotlinx:kotlinx-coroutines") {
+                useVersion(Versions.coroutines)
+            }
+        }
+    }
+}
